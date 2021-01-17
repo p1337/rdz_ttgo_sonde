@@ -24,7 +24,7 @@
 #include "esp_heap_caps.h"
 //#define ESP_MEM_DEBUG 1
 int e;
-
+float gpsLatFork, gpsLonFork;
 enum MainState { ST_DECODER, ST_SPECTRUM, ST_WIFISCAN, ST_UPDATE, ST_TOUCHCALIB };
 static MainState mainState = ST_WIFISCAN; // ST_WIFISCAN;
 
@@ -1932,7 +1932,7 @@ void enableNetwork(bool enable) {
     
     if (sonde.config.mqtt.active && strlen(sonde.config.mqtt.host) > 0) {
       mqttEnabled = true;
-      mqttclient.init(sonde.config.mqtt.host, sonde.config.mqtt.port, sonde.config.mqtt.id, sonde.config.mqtt.username, sonde.config.mqtt.password, sonde.config.mqtt.prefix);
+      mqttclient.init(sonde.config.mqtt.host, sonde.config.mqtt.port, sonde.config.mqtt.id, sonde.config.mqtt.username, sonde.config.mqtt.password, sonde.config.mqtt.prefix, sonde.config.call);
     }
 
     connected = true;

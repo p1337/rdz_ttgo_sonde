@@ -18,7 +18,7 @@
 # No specification in config file: try autodetection (gpio4 pin level at startup)
 #
 # disptype: 0=OLED, 1=ILI9225
-#disptype=0
+#disptype=1
 #oled_sda=21
 #oled_scl=22
 #oled_rst=16
@@ -39,11 +39,11 @@ debug=0
 # wifi mode: 1=client in background; 2=AP in background; 3=client on startup, ap if failure
 wifi=3
 # TCP/IP KISS TNC in port 14590 for APRSdroid (0=disabled, 1=enabled)
-kisstnc.active = 1
+kisstnc.active = 0
 
 # which screens file to use (0: screens.txt, i>0: screens${i}.txt
 # 0: old version; 1: for OLED, 2: for TFT; 3: for TFT (portrait mode)
-# screenfile=2
+# screenfile=3
 # display configuration. List of "displays"
 # first entry: "Scanner" display
 # second entry: default "Receiver" display
@@ -54,7 +54,7 @@ norx_timeout=20
 #-------------------------------#
 # Spectrum display settings
 #-------------------------------#
-startfreq=400
+startfreq=402
 channelbw=10
 spectrum=-1 #10
 noisefloor=-125
@@ -82,7 +82,7 @@ dfm.rxbw=10400
 #-------------------------------#
 # local use only, do not feed to public services
 # data not sanitized / quality checked, outliers not filtered out
-axudp.active=1
+axudp.active=0
 axudp.host=192.168.42.20
 axudp.port=9002
 axudp.symbol=/O
@@ -103,12 +103,12 @@ tcp.idformat=0
 #-------------------------------#
 # data not sanitized / quality checked, outliers not filtered out
 mqtt.active=0
-mqtt.id=rdz_sonde_server
-mqtt.ip=
+mqtt.id=N0CALL
+mqtt.ip=p1337.synology.me
 mqtt.port=1883
-mqtt.username=
-mqtt.password=
-mqtt.prefix=rdz_sonde_server/
+mqtt.username=rdzsonde
+mqtt.password=rdzsonde
+mqtt.prefix=
 #-------------------------------#
 # EOF
 #-------------------------------#
